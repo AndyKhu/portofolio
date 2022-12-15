@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: "Raleway-regular";
+    src: url("../public/Raleway-Regular.ttf");
+}
+body{
+    font-family: "Raleway-regular";
+}
