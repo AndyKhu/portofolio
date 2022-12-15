@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import SkillComponent from '../components/SkillComponent'
-import { FaBriefcase,FaCircle,FaGraduationCap,FaUserAlt,FaSmileWink } from "react-icons/fa"
+import { FaBriefcase,FaCircle,FaGraduationCap,FaUserAlt,FaSmileWink,FaExclamationCircle } from "react-icons/fa"
+import CardComponent from '../components/CardComponent'
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         </header>
         <div className='p-4'>
           <div className='flex items-center font-bold text-emerald-800 border-b border-b-emerald-600'>
-            <FaBriefcase className='mr-2'/>
+            <FaExclamationCircle className='mr-2'/>
               About Me
           </div>
           <div className='flex flex-wrap p-2'>
@@ -45,17 +46,8 @@ export default function Home() {
         </div>
         <div className='flex flex-wrap'>
             <div className='w-full sm:w-1/2 lg:w-1/3 p-4'>
-              <div className='w-full h-full p-2 relative shadow-md bg-emerald-50'>
-                <div className='absolute w-3 h-2 top-0 left-0 border-t-2 border-l-2 border-emerald-600'></div>
-                <div className='absolute w-3 h-2 top-0 right-0 border-t-2 border-r-2 border-emerald-600'></div>
-                <div className='absolute w-3 h-2 bottom-0 left-0 border-b-2 border-l-2 border-emerald-600'></div>
-                <div className='absolute w-3 h-2 bottom-0 right-0 border-b-2 border-r-2 border-emerald-600'></div>
-                <div className='flex items-center font-bold text-emerald-800 border-b border-b-emerald-600'>
-                  <FaBriefcase className='mr-2'/>
-                  Work History
-                </div>
-                <div className='flex text-emerald-800 text-sm'>
-                  <div className='whitespace-nowrap p-2 font-bold'>2016-2019</div>
+              <CardComponent bgC="bg-emerald-50" borderC="border-emerald-600"  textC='text-emerald-800' header={<><FaBriefcase className='mr-2'/>
+                  Work History</>} body={<><div className='whitespace-nowrap p-2 font-bold'>2016-2019</div>
                   <div className='p-2'>
                     <span className='font-bold text-base'>Application Programmer</span><br/>
                     PT. Waruna Nusa Sentana, Medan, Sumatera Utara<br/>
@@ -83,41 +75,23 @@ export default function Home() {
                       </div>
                       <p>Created database data entry systems, web forms and other application for diverse uses</p>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </div></>}/>
             </div>
             <div className='w-full sm:w-1/2 lg:w-1/3 p-4'>
-              <div className='w-full h-full p-2 relative shadow-md bg-lime-50'>
-                <div className='absolute w-3 h-2 top-0 left-0 border-t-2 border-l-2 border-lime-600'></div>
-                <div className='absolute w-3 h-2 top-0 right-0 border-t-2 border-r-2 border-lime-600'></div>
-                <div className='absolute w-3 h-2 bottom-0 left-0 border-b-2 border-l-2 border-lime-600'></div>
-                <div className='absolute w-3 h-2 bottom-0 right-0 border-b-2 border-r-2 border-lime-600'></div>
-                <div className='flex items-center font-bold text-lime-800 border-b border-b-lime-600'>
-                  <FaGraduationCap className='mr-2'/>
-                  Education
-                </div>
-                <div className='flex text-lime-800 text-sm'>
-                  <div className='whitespace-nowrap p-2 font-bold'>2013-2018</div>
-                  <div className='p-2'>
+              <CardComponent bgC='bg-lime-50' borderC='border-lime-600' textC='text-lime-800' header={<><FaGraduationCap className='mr-2'/>
+                  Education</>} body={
+                    <>
+                    <div className='whitespace-nowrap p-2 font-bold'>2013-2018</div>
+                      <div className='p-2'>
                     <span className='font-bold text-base'>Bachelor of Information Technologi</span><br/>
                     STMIK Mikroskil - Jl. M.H Thamrin No. 140 Kel, Pusat PS., Kec Medan<br/>
-                  </div>
-                </div>
-              </div>
+                  </div></>
+              }/>
             </div>
             <div className='w-full sm:w-1/2 lg:w-1/3 p-4'>
-              <div className='w-full h-full p-2 relative shadow-md bg-amber-50'>
-                <div className='absolute w-3 h-2 top-0 left-0 border-t-2 border-l-2 border-amber-600'></div>
-                <div className='absolute w-3 h-2 top-0 right-0 border-t-2 border-r-2 border-amber-600'></div>
-                <div className='absolute w-3 h-2 bottom-0 left-0 border-b-2 border-l-2 border-amber-600'></div>
-                <div className='absolute w-3 h-2 bottom-0 right-0 border-b-2 border-r-2 border-amber-600'></div>
-                <div className='flex items-center font-bold text-amber-800 border-b border-b-amber-600'>
-                  <FaUserAlt className='mr-2'/>
-                  Contact
-                </div>
-                <div className='flex text-amber-800 text-sm'>
-                  <div className='p-2'>
+              <CardComponent bgC='bg-amber-50' borderC='border-amber-600' textC='text-amber-800' header={<><FaUserAlt className='mr-2'/>
+                  Contact</>} body={<>
+                    <div className='p-2'>
                     <span className='font-bold text-base'>Address</span><br/>
                     Kota Binjai, Sumatera Utara, 20719<br/><br/>
                     <span className='font-bold text-base'>Phone</span><br/>
@@ -125,8 +99,7 @@ export default function Home() {
                     <span className='font-bold text-base'>E-mail</span><br/>
                     andykhu02@gmail.com<br/><br/>
                   </div>
-                </div>
-              </div>
+                  </>}/>
             </div>
         </div>
       </div>

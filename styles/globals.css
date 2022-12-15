@@ -8,3 +8,9 @@
 body{
     font-family: "Raleway-regular";
 }
+.skill-bar{
+    animation: moving-bars 1s linear;
+}
+@keyframes moving-bars{
+    0%  { width: 0%; }
+}
